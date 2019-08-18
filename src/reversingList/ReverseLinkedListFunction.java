@@ -1,6 +1,6 @@
 package reversingList;
 
-public class ReverseListFunction {
+public class ReverseLinkedListFunction {
 	// Iterative solution
 	public ListNode reverseList(ListNode head) {
 		ListNode previousHead = null;

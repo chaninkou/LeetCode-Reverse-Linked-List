@@ -9,12 +9,25 @@ public class Main {
 		head.next.next.next = new ListNode(4);
 		head.next.next.next.next= new ListNode(5);
 		
+		System.out.println("Input Linked List: ");
+		displayLinkedList(head);
+		
+		ReverseLinkedListFunction solution = new ReverseLinkedListFunction();
+		
+		System.out.println("Reverse Linked List: ");
+		displayLinkedList(solution.reverseList(head));
+		
+	}
+	
+	public static void displayLinkedList(ListNode head){
 		ListNode current = head;
+		
 		while(current != null){
 			System.out.print(current.val + " ");
 			
 			current = current.next;
 		}
 		
+		System.out.println(" ");
 	}
 }
