@@ -23,7 +23,11 @@ public class Main {
 		ListNode current = head;
 		
 		while(current != null){
-			System.out.print(current.val + " ");
+			if(current.next == null){
+				System.out.print(current.val);
+			} else {
+				System.out.print(current.val + " -> ");
+			}
 			
 			current = current.next;
 		}

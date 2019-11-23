@@ -5,20 +5,24 @@ public class ReverseLinkedListFunction {
 	public ListNode reverseList(ListNode head) {
 		ListNode previousHead = null;
 		ListNode current = head;
-		ListNode next = null;
+		ListNode nextNode = null;
 		// p c n
 		// null < 1 < 2 3 > 4 > 5
 
 		while (current != null) {
-			next = current.next;
+			// Set the next node first before we update current.next
+			nextNode = current.next;
 
+			// Set current.next = previous before we update previous
 			current.next = previousHead;
 
+			// Set the previous to current before we update current
 			previousHead = current;
 
-			current = next;
+			current = nextNode;
 		}
 
+		// We are not return current because current is node, but previous is the head of the new reserved list
 		return previousHead;
 	}
 
