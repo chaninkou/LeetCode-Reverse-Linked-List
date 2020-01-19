@@ -19,6 +19,7 @@ public class ReverseLinkedListFunction {
 			// Set the previous to current before we update current
 			previousHead = current;
 
+			// update currrent to the next node that we kept track of
 			current = nextNode;
 		}
 
