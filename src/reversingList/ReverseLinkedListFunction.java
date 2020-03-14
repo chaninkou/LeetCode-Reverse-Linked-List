@@ -27,6 +27,42 @@ public class ReverseLinkedListFunction {
 		return previousHead;
 	}
 
+	// Simple in-place iterative way
+	public ListNode reverseList3(ListNode head){
+		ListNode previous = null;
+		
+		while(head != null){
+			ListNode next = head.next;
+			
+			head.next = previous;
+			
+			previous = head;
+			
+			head = next;
+		}
+		
+		return previous;
+		
+	}
+	
+	// Recursive away similar to what is above
+    public ListNode reverseList4(ListNode head) {
+        return reverseListHelper(head,null);
+    }
+    
+    private ListNode reverseListHelper(ListNode head, ListNode newNode){
+        if(head == null){
+        	// remember to return the newnode, not null
+            return newNode;
+        }
+        
+        ListNode nextNode = head.next;
+        
+        head.next = newNode;
+        
+        return reverseListHelper(nextNode,head);
+    }
+	
 	// Recursion solution, O(n) time but O(n) space because call stack
 	 public ListNode reverseList2(ListNode head){
 		 // When it gets to the end of the node, return that head as newHead
