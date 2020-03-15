@@ -15,7 +15,7 @@ public class Main {
 		ReverseLinkedListFunction solution = new ReverseLinkedListFunction();
 		
 		System.out.println("Reverse Linked List: ");
-		displayLinkedList(solution.reverseList(head));
+		displayLinkedList(solution.reverseList4(head));
 		
 	}
 	

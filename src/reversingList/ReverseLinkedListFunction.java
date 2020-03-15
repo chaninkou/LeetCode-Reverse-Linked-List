@@ -50,17 +50,18 @@ public class ReverseLinkedListFunction {
         return reverseListHelper(head,null);
     }
     
-    private ListNode reverseListHelper(ListNode head, ListNode newNode){
+    private ListNode reverseListHelper(ListNode head, ListNode previousNode){
+    	// head is null, we reach the end of the linked list
         if(head == null){
-        	// remember to return the newnode, not null
-            return newNode;
+        	return previousNode;
         }
         
         ListNode nextNode = head.next;
         
-        head.next = newNode;
+        head.next = previousNode;
         
-        return reverseListHelper(nextNode,head);
+        // head will become next node
+        return reverseListHelper(nextNode, head);
     }
 	
 	// Recursion solution, O(n) time but O(n) space because call stack
