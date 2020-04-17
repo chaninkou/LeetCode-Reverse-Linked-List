@@ -6,8 +6,6 @@ public class ReverseLinkedListFunction {
 		ListNode previousHead = null;
 		ListNode current = head;
 		ListNode nextNode = null;
-		// p c n
-		// null < 1 < 2 3 > 4 > 5
 
 		while (current != null) {
 			// Set the next node first before we update current.next
